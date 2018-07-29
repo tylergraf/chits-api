@@ -1,6 +1,6 @@
-# tracker-api
+# chits-api
 
-Data api for tracker app.
+Data api for chits game app.
 
 ## Install mongo
 
