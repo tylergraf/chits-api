@@ -6,14 +6,14 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const index = require('./routes/index');
+// const index = require('./routes/index');
 const api = require('./routes/api');
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-// mongoose.connect('mongodb://localhost/cookbook', {useMongoClient: true})
-mongoose.connect(`mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}${process.env.MONGO_STITCH_URL}`, {useMongoClient: true})
+// mongoose.connect('mongodb://localhost/chits', {useMongoClient: true})
+mongoose.connect(`${process.env.MONGODB_URI}`, {useMongoClient: true})
   .then((db)=>{
     console.log('Connected to mongodb');
   })
@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+// app.use('/', index);
 app.use('/api', api);
 
 // catch 404 and forward to error handler
