@@ -5,6 +5,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const proxy = require('simple-http-proxy');
 
 // const index = require('./routes/index');
 const api = require('./routes/api');
@@ -24,6 +25,9 @@ mongoose.connect(`${process.env.MONGODB_URI}`, {useMongoClient: true})
 
 const app = express();
 app.use(cors())
+
+app.use('/maps/api', proxy('https://maps.googleapis.com/maps/api'));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
