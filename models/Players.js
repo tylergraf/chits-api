@@ -7,7 +7,7 @@ const playerSchema = new Schema({
   updated: { type: Date, default: Date.now },
   id: ObjectId,
   name: String,
-  picture: String,
+  avatarUrl: String,
 });
 
 module.exports = mongoose.model('Player', playerSchema);
