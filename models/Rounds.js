@@ -7,7 +7,7 @@ var roundSchema = new Schema({
     updated: {type: Date, default: Date.now},
     players: [{type: ObjectId, ref: 'Player'}],
     chits: [{type: ObjectId, ref: 'Chit'}],
-    // _course: {type: ObjectId, ref: 'Course'},
+    course: Object,
 });
 
 

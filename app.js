@@ -26,7 +26,7 @@ mongoose.connect(`${process.env.MONGODB_URI}`, {useMongoClient: true})
 const app = express();
 app.use(cors())
 
-app.use('/maps/api', proxy('https://maps.googleapis.com/maps/api'));
+app.use('/api/maps/api', proxy('https://maps.googleapis.com/maps/api'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
