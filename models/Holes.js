@@ -7,7 +7,6 @@ var holeSchema = new Schema({
     updated: {type: Date, default: Date.now},
     number: Number,
     _round:  {type: ObjectId, ref: 'Round'},
-    _user:  {type: ObjectId, ref: 'User'},
     chits: [
       {
         _chit: {type: ObjectId, ref: 'Chit'},

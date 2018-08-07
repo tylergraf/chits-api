@@ -8,6 +8,8 @@ var roundSchema = new Schema({
     players: [{type: ObjectId, ref: 'Player'}],
     chits: [{type: ObjectId, ref: 'Chit'}],
     course: Object,
+    holes: [{type: ObjectId, ref: 'Hole'}],
+    currentHole: Number
 });
 
 
